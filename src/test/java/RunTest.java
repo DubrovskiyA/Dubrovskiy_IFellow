@@ -16,7 +16,7 @@ public class RunTest {
     @Tag("Positive")
     public void test1(){
         System.out.println("Test_1");
-        int x=9;
+        int x=3;
         int y=2;
         int z=x%y;
         Assertions.assertTrue(y>z);
