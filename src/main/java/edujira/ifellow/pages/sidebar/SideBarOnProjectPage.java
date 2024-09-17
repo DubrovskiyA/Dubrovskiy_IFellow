@@ -1,6 +1,7 @@
 package edujira.ifellow.pages.sidebar;
 
 import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
@@ -15,8 +16,11 @@ public class SideBarOnProjectPage {
             case LIST_OF_TASKS:
                 for (SelenideElement itemOfList : listOfSidebarItems
                         .shouldBe(CollectionCondition.sizeGreaterThanOrEqual(6))) {
-                    if (itemOfList.$x(".//span[contains(@class,'item-label')]").getText().equals("Список задач")) {
-                        itemOfList.click();
+                    if (itemOfList.$x(".//span[contains(@class,'item-label')]")
+                            .shouldBe(Condition.visible)
+                            .getText()
+                            .equals("Список задач")) {
+                        itemOfList.$x(".//span[contains(@class,'agile-icon-plan')]").click();
                         break;
                     }
                 }
@@ -24,8 +28,11 @@ public class SideBarOnProjectPage {
             case TASKS:
                 for (SelenideElement itemOfList : listOfSidebarItems
                         .shouldBe(CollectionCondition.sizeGreaterThanOrEqual(6))) {
-                    if (itemOfList.$x(".//span[contains(@class,'item-label')]").getText().equals("Задачи")) {
-                        itemOfList.click();
+                    if (itemOfList.$x(".//span[contains(@class,'item-label')]")
+                            .shouldBe(Condition.visible)
+                            .getText()
+                            .equals("Задачи")) {
+                        itemOfList.$x(".//span[contains(@class,'icon-sidebar-issues')]").click();
                         break;
                     }
                 }

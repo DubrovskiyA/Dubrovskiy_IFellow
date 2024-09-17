@@ -4,12 +4,15 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import edujira.ifellow.pages.header.Header;
 import edujira.ifellow.pages.sidebar.SideBarOnProjectPage;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class ProjectTasksPage extends SideBarOnProjectPage {
+public class ProjectTasksPage {
+    Header header;
+    SideBarOnProjectPage sideBar;
     private final SelenideElement counter =
             $x("//div[@class='pager-container']//span[contains(text(),'из')]");
     private final SelenideElement createTask = $x("//button[contains(text(),'Создать задачу')]");
@@ -23,7 +26,14 @@ public class ProjectTasksPage extends SideBarOnProjectPage {
     private final SelenideElement taskOptions = $x("//span[contains(text(),'Еще')]");
     private final SelenideElement deleteTask = $x("//span[contains(text(),'Удалить')]");
     private final SelenideElement deleteTaskSubmit = $x("//input[@id='delete-issue-submit']");
+    private final SelenideElement seeAllTasksAndFilters = $x("//div[@id='full-issue-navigator']/a");
+    private final SelenideElement searchInput = $x("//input[contains(@class,'search-entry')]");
 
+
+    public ProjectTasksPage() {
+        header = new Header();
+        sideBar = new SideBarOnProjectPage();
+    }
 
     public int getCountOfAllOpenedTasks() {
         String[] s = counter.shouldBe(Condition.visible).getText().split(" ");
@@ -81,5 +91,22 @@ public class ProjectTasksPage extends SideBarOnProjectPage {
         taskOptions.click();
         deleteTask.click();
         deleteTaskSubmit.click();
+    }
+
+    public void seeAllTasksAndFilters() {
+        seeAllTasksAndFilters.click();
+    }
+
+    public void searchTasks(String task) {
+        searchInput.val(task).pressEnter();
+    }
+
+
+    public Header getHeader() {
+        return header;
+    }
+
+    public SideBarOnProjectPage getSideBar() {
+        return sideBar;
     }
 }

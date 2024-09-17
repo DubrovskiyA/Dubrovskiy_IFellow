@@ -6,7 +6,8 @@ import edujira.ifellow.pages.header.Header;
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class SystemDashboardPage extends Header {
+public class SystemDashboardPage {
+    Header header;
     private final SelenideElement username = $x("//input[@name='os_username']");
     private final SelenideElement password = $x("//input[@name='os_password']");
     private final SelenideElement submitButton = $x("//input[@value='Войти']");
@@ -14,6 +15,10 @@ public class SystemDashboardPage extends Header {
     private final SelenideElement userOptionsProfile =
             $x("//div[@id='user-options-content']//a[@id='view_profile']");
     private final SelenideElement userTitleName = $x("//span[@id='up-user-title-name']");
+
+    public SystemDashboardPage() {
+        header = new Header();
+    }
 
     public void setUsername(String username1) {
         username.val(username1);
@@ -31,5 +36,9 @@ public class SystemDashboardPage extends Header {
         userOptions.shouldNotBe(Condition.text("Вход")).click();
         userOptionsProfile.click();
         return userTitleName.getText();
+    }
+
+    public Header getHeader() {
+        return header;
     }
 }
