@@ -20,7 +20,6 @@ public class WebHooks {
         options.addArguments("start-maximized");
         Configuration.browserCapabilities = options;
         Configuration.browserSize = null;
-        Configuration.assertionMode = AssertionMode.SOFT;
         Selenide.open(URL);
     }
 }
