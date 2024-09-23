@@ -1,9 +1,10 @@
-package edujira.ifellow.pages.header;
+package edujira.ifellow.pages.elements;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import edujira.ifellow.pages.elements.enums.HeaderItem;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;

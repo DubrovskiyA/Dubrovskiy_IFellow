@@ -2,7 +2,7 @@ package edujira.ifellow.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.pages.header.Header;
+import edujira.ifellow.pages.elements.Header;
 
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -34,7 +34,7 @@ public class ProjectTasksSearchPage {
         searchInput.val(task).pressEnter();
     }
     public void selectSearchedTask() {
-        firstTaskFromSearchList.click();
+        firstTaskFromSearchList.shouldBe(Condition.interactable).click();
     }
     public void waitOpenTask(String condition){
         topicOfTask.shouldBe(Condition.text(condition));

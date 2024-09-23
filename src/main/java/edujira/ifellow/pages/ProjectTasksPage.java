@@ -4,8 +4,9 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.pages.header.Header;
-import edujira.ifellow.pages.sidebar.SideBarOnProjectPage;
+import edujira.ifellow.pages.elements.enums.TypeOfNewTask;
+import edujira.ifellow.pages.elements.Header;
+import edujira.ifellow.pages.elements.SideBarOnProjectPage;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
@@ -13,6 +14,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class ProjectTasksPage {
     Header header;
     SideBarOnProjectPage sideBar;
+    private final SelenideElement nameOfProject = $x("//div[contains(@class,'project-title')]/a");
     private final SelenideElement counter =
             $x("//div[@class='pager-container']//span[contains(text(),'из')]");
     private final SelenideElement createTask = $x("//button[contains(text(),'Создать задачу')]");
@@ -33,6 +35,10 @@ public class ProjectTasksPage {
     public ProjectTasksPage() {
         header = new Header();
         sideBar = new SideBarOnProjectPage();
+    }
+
+    public String getProjectTitle() {
+        return nameOfProject.getAttribute("title");
     }
 
     public int getCountOfAllOpenedTasks() {
@@ -87,7 +93,7 @@ public class ProjectTasksPage {
         previousPage.click();
     }
 
-    public void deleteTask() {
+    public void deleteOpenedTask() {
         taskOptions.click();
         deleteTask.click();
         deleteTaskSubmit.click();

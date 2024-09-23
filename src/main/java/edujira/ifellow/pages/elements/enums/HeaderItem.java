@@ -1,4 +1,4 @@
-package edujira.ifellow.pages.header;
+package edujira.ifellow.pages.elements.enums;
 
 public enum HeaderItem {
     PROJECTS, TASKS
