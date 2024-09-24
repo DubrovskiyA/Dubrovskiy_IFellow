@@ -1,6 +1,7 @@
 package edujira.ifellow.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import edujira.ifellow.props.PropertyProvider;
 import edujira.ifellow.pages.elements.Header;
@@ -16,12 +17,16 @@ public class SystemDashboardPage {
     private final SelenideElement USER_OPTIONS_PROFILE =
             $x("//div[@id='user-options-content']//a[@id='view_profile']");
     private final SelenideElement USER_TITLE_NAME = $x("//span[@id='up-user-title-name']");
-
-    private final String LOGIN= PropertyProvider.getInstance().getProps().getProperty("test.user");
-    private final String PASS= PropertyProvider.getInstance().getProps().getProperty("test.pass");
+    private final String URL = PropertyProvider.getInstance().getProps().getProperty("test.url");
+    private final String LOGIN = PropertyProvider.getInstance().getProps().getProperty("test.user");
+    private final String PASS = PropertyProvider.getInstance().getProps().getProperty("test.pass");
 
     public SystemDashboardPage() {
         header = new Header();
+    }
+
+    public void openMainPage() {
+        Selenide.open(URL);
     }
 
     public void setUserName() {

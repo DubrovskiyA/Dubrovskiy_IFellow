@@ -33,12 +33,15 @@ public class ProjectTasksSearchPage {
     public void searchTasks(String task) {
         searchInput.val(task).pressEnter();
     }
-    public void selectSearchedTask() {
-        firstTaskFromSearchList.shouldBe(Condition.interactable).click();
+
+    public void selectSearchedTask(String value) {
+        firstTaskFromSearchList.shouldBe(Condition.attribute("title", value)).click();
     }
-    public void waitOpenTask(String condition){
+
+    public void waitOpenTask(String condition) {
         topicOfTask.shouldBe(Condition.text(condition));
     }
+
     public String getCurrentOpenTaskTopic() {
         return topicOfTask.getText().trim();
     }
