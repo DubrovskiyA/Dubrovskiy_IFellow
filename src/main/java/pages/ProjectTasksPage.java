@@ -1,12 +1,12 @@
-package edujira.ifellow.pages;
+package pages;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.pages.elements.enums.TypeOfNewTask;
-import edujira.ifellow.pages.elements.Header;
-import edujira.ifellow.pages.elements.SideBarOnProjectPage;
+import pages.elements.enums.TypeOfNewTask;
+import pages.elements.Header;
+import pages.elements.SideBarOnProjectPage;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;

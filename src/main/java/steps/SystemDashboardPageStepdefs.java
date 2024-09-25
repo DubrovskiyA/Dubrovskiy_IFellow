@@ -1,8 +1,8 @@
-package edujira.ifellow.steps;
+package steps;
 
-import edujira.ifellow.pages.SystemDashboardPage;
-import edujira.ifellow.pages.elements.enums.HeaderItem;
-import edujira.ifellow.props.PropertyProvider;
+import pages.SystemDashboardPage;
+import pages.elements.enums.HeaderItem;
+import props.PropertyProvider;
 import io.cucumber.java.ru.Дано;
 import org.junit.jupiter.api.Assertions;
 

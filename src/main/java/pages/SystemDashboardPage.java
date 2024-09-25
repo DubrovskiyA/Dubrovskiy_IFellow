@@ -1,10 +1,10 @@
-package edujira.ifellow.pages;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.props.PropertyProvider;
-import edujira.ifellow.pages.elements.Header;
+import props.PropertyProvider;
+import pages.elements.Header;
 
 import static com.codeborne.selenide.Selenide.$x;
 

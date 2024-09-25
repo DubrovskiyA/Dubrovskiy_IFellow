@@ -1,12 +1,12 @@
-package edujira.ifellow.steps;
+package steps;
 
-import edujira.ifellow.pages.CreateNewTaskDialogPage;
-import edujira.ifellow.pages.ProjectTasksSearchPage;
-import edujira.ifellow.pages.elements.Message;
-import edujira.ifellow.pages.elements.enums.Priority;
-import edujira.ifellow.pages.elements.enums.Severity;
-import edujira.ifellow.pages.elements.enums.TypeOfNewTask;
-import edujira.ifellow.pages.elements.enums.Version;
+import pages.CreateNewTaskDialogPage;
+import pages.ProjectTasksSearchPage;
+import pages.elements.Message;
+import pages.elements.enums.Priority;
+import pages.elements.enums.Severity;
+import pages.elements.enums.TypeOfNewTask;
+import pages.elements.enums.Version;
 import io.cucumber.java.ru.Дано;
 import org.junit.jupiter.api.Assertions;
 

@@ -1,4 +1,4 @@
-package edujira.ifellow.props;
+package props;
 
 import java.io.FileReader;
 import java.io.IOException;

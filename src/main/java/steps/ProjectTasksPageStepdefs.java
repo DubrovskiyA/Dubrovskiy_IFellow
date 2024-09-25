@@ -1,9 +1,9 @@
-package edujira.ifellow.steps;
+package steps;
 
-import edujira.ifellow.pages.ProjectTasksPage;
-import edujira.ifellow.pages.ProjectTasksSearchPage;
-import edujira.ifellow.pages.elements.enums.SideBarItems;
-import edujira.ifellow.pages.elements.enums.TypeOfNewTask;
+import pages.ProjectTasksPage;
+import pages.ProjectTasksSearchPage;
+import pages.elements.enums.SideBarItems;
+import pages.elements.enums.TypeOfNewTask;
 import io.cucumber.java.ru.Дано;
 import org.junit.jupiter.api.Assertions;
 

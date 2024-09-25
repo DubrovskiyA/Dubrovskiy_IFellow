@@ -1,11 +1,11 @@
-package edujira.ifellow.pages;
+package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.pages.elements.enums.Priority;
-import edujira.ifellow.pages.elements.enums.Severity;
-import edujira.ifellow.pages.elements.enums.TypeOfNewTask;
-import edujira.ifellow.pages.elements.enums.Version;
+import pages.elements.enums.Priority;
+import pages.elements.enums.Severity;
+import pages.elements.enums.TypeOfNewTask;
+import pages.elements.enums.Version;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;

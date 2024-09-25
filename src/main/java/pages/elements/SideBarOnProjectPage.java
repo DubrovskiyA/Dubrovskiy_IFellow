@@ -1,10 +1,10 @@
-package edujira.ifellow.pages.elements;
+package pages.elements;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.pages.elements.enums.SideBarItems;
+import pages.elements.enums.SideBarItems;
 
 import static com.codeborne.selenide.Selenide.$$x;
 

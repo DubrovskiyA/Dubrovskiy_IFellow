@@ -1,8 +1,8 @@
-package edujira.ifellow.pages;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.pages.elements.Header;
+import pages.elements.Header;
 
 import static com.codeborne.selenide.Selenide.$x;
 
