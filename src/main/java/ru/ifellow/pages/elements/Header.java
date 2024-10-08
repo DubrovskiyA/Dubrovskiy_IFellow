@@ -16,7 +16,7 @@ public class Header {
                     .as("Список элементов Хедера");
     private final ElementsCollection listOfProjectsOnDropDownMenu = $$x("//div[@id='project_current']//li")
             .as("Список проектов в дропдауне хедера \"Проеты\" ");
-    private final SelenideElement createNewTask=$x("//li[@id='create-menu']")
+    private final SelenideElement createNewTask = $x("//li[@id='create-menu']")
             .as("Кнопка создания новой задачи в Хедере");
 
     public void openDropdownMenu(HeaderItem item) {
@@ -40,7 +40,8 @@ public class Header {
             }
         }
     }
-    public void createNewTaskByDialogWindow(){
+
+    public void createNewTaskByDialogWindow() {
         createNewTask.click();
     }
 }

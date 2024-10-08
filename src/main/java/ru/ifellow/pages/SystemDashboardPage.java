@@ -23,8 +23,8 @@ public class SystemDashboardPage {
     private final SelenideElement USER_TITLE_NAME = $x("//span[@id='up-user-title-name']")
             .as("Имя пользователя на странице профиля пользователя");
 
-    private final String LOGIN= Props.props.userName();
-    private final String PASS= Props.props.pass();
+    private final String LOGIN = Props.props.userName();
+    private final String PASS = Props.props.pass();
 
     public SystemDashboardPage() {
         header = new Header();

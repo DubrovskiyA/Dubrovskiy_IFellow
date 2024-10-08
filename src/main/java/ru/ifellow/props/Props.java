@@ -18,4 +18,16 @@ public interface Props extends Config {
 
     @Key("test.pass")
     String pass();
+
+    @Key("test.project.to.open")
+    String project();
+
+    @Key("test.task.to.search")
+    String taskToSearch();
+
+    @Key("test.task.to.search.status")
+    String taskToSearchStatus();
+
+    @Key("test.task.to.search.fix.version")
+    String taskToSearchFixVersion();
 }

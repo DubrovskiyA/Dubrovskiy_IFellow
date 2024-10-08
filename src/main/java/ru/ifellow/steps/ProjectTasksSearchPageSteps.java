@@ -1,5 +1,6 @@
 package ru.ifellow.steps;
 
+import io.qameta.allure.Step;
 import ru.ifellow.pages.CreateNewTaskDialogPage;
 import ru.ifellow.pages.ProjectTasksSearchPage;
 import ru.ifellow.pages.elements.enums.Priority;
@@ -14,22 +15,28 @@ public class ProjectTasksSearchPageSteps {
 
     public ProjectTasksSearchPageSteps() {
         projectTasksSearchPage = new ProjectTasksSearchPage();
-        createNewTaskDialogPage=new CreateNewTaskDialogPage();
+        createNewTaskDialogPage = new CreateNewTaskDialogPage();
     }
 
+    @Step("Поиск и открытие задачи")
     public void openCreatedBugReport() {
         projectTasksSearchPage.searchTasks(topicForCreatingAbstractBugReport);
         projectTasksSearchPage.selectSearchedTask();
         projectTasksSearchPage.waitOpenTask(topicForCreatingAbstractBugReport);
     }
+
+    @Step("Проверка того,что Статус открытой задачи: \"{status}\"")
     public boolean checkOpenedTaskStatusIs(String status) {
         projectTasksSearchPage.waitStatusToBe(status);
         return projectTasksSearchPage.getCurrentTaskStatus().equals(status);
     }
 
+    @Step("Проверка того,что Исправить в версиях открытой задачи: \"{version}\"")
     public boolean checkOpenedTaskFixVersionIs(String version) {
         return projectTasksSearchPage.getFixVersion().equals(version);
     }
+
+    @Step("Создание баг-репорта с полным заполнением")
     public void createAbstractBugReportWithFullFilling() {
         projectTasksSearchPage.getHeader().createNewTaskByDialogWindow();
         createNewTaskDialogPage.setType(TypeOfNewTask.BUG);
