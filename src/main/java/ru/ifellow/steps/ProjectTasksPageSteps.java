@@ -1,9 +1,10 @@
-package edujira.ifellow.steps;
+package ru.ifellow.steps;
 
-import edujira.ifellow.pages.*;
-import edujira.ifellow.pages.elements.Message;
-import edujira.ifellow.pages.elements.enums.TypeOfNewTask;
-import edujira.ifellow.pages.elements.enums.SideBarItems;
+import ru.ifellow.pages.ProjectTasksPage;
+import ru.ifellow.pages.ProjectTasksSearchPage;
+import ru.ifellow.pages.elements.Message;
+import ru.ifellow.pages.elements.enums.TypeOfNewTask;
+import ru.ifellow.pages.elements.enums.SideBarItems;
 
 public class ProjectTasksPageSteps {
     private ProjectTasksPage projectTasksPage;

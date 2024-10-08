@@ -1,10 +1,10 @@
-package edujira.ifellow.pages.elements;
+package ru.ifellow.pages.elements;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import edujira.ifellow.pages.elements.enums.HeaderItem;
+import ru.ifellow.pages.elements.enums.HeaderItem;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
@@ -12,9 +12,12 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class Header {
     private final ElementsCollection listOfHeaderItems =
-            $$x("//div[contains(@class,'header-primary')]/child::ul/child::li");
-    private final ElementsCollection listOfProjectsOnDropDownMenu = $$x("//div[@id='project_current']//li");
-    private final SelenideElement createNewTask=$x("//li[@id='create-menu']");
+            $$x("//div[contains(@class,'header-primary')]/child::ul/child::li")
+                    .as("Список элементов Хедера");
+    private final ElementsCollection listOfProjectsOnDropDownMenu = $$x("//div[@id='project_current']//li")
+            .as("Список проектов в дропдауне хедера \"Проеты\" ");
+    private final SelenideElement createNewTask=$x("//li[@id='create-menu']")
+            .as("Кнопка создания новой задачи в Хедере");
 
     public void openDropdownMenu(HeaderItem item) {
         listOfHeaderItems.shouldBe(CollectionCondition.sizeGreaterThanOrEqual(7));
@@ -40,6 +43,4 @@ public class Header {
     public void createNewTaskByDialogWindow(){
         createNewTask.click();
     }
-
-
 }

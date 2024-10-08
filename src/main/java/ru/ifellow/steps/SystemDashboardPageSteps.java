@@ -1,7 +1,7 @@
-package edujira.ifellow.steps;
+package ru.ifellow.steps;
 
-import edujira.ifellow.pages.*;
-import edujira.ifellow.pages.elements.enums.HeaderItem;
+import ru.ifellow.pages.SystemDashboardPage;
+import ru.ifellow.pages.elements.enums.HeaderItem;
 
 public class SystemDashboardPageSteps {
     private SystemDashboardPage systemDashboardPage;

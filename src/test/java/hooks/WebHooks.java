@@ -1,15 +1,15 @@
 package hooks;
 
-import com.codeborne.selenide.AssertionMode;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import edujira.ifellow.props.PropertyProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
+import ru.ifellow.props.Props;
 
 
 public class WebHooks {
-    private final String URL= PropertyProvider.getInstance().getProps().getProperty("test.url");
+    private final String URL= Props.props.baseUrl();
     @BeforeEach
     public void setUp() {
         Configuration.browser = "chrome";
