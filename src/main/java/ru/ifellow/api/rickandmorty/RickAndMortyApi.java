@@ -1,13 +1,13 @@
-package ru.ifellow.task1.api;
+package ru.ifellow.api.rickandmorty;
 
 import io.restassured.response.ValidatableResponse;
+import ru.ifellow.utils.Props;
 
 import static io.restassured.RestAssured.given;
-import static ru.ifellow.task1.utils.Props.props;
 
 public class RickAndMortyApi extends BaseApi {
-    private final String CHARACTER_PATH = props.characterPath();
-    private final String EPISODE_PATH = props.episodePath();
+    private final String CHARACTER_PATH = Props.props.rickAndMortyCharacterPath();
+    private final String EPISODE_PATH = Props.props.rickAndMortyEpisodePath();
 
     public ValidatableResponse getCharacterByName(String name) {
         return given()

@@ -1,12 +1,12 @@
-package ru.ifellow.task2.api;
+package ru.ifellow.api.rickandmorty;
 
 import io.restassured.RestAssured;
+import ru.ifellow.utils.Props;
 
-import static ru.ifellow.task2.utils.Props.props;
 
 public abstract class BaseApi {
     public BaseApi() {
-        RestAssured.requestSpecification = Specification.baseRequestSpec(props.baseUrl());
+        RestAssured.requestSpecification = Specification.baseRequestSpec(Props.props.rickAndMortyBaseUrl());
         RestAssured.responseSpecification = Specification.baseResponseSpec();
     }
 }

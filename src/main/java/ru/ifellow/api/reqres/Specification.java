@@ -1,4 +1,4 @@
-package ru.ifellow.task1.api;
+package ru.ifellow.api.reqres;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;

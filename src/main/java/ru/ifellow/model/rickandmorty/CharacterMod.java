@@ -1,16 +1,16 @@
-package ru.ifellow.task1.dto;
+package ru.ifellow.model.rickandmorty;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CharacterDTO {
+public class CharacterMod {
     private int id;
     private String name;
     private String status;
     private String species;
-    private LocationDTO location;
+    private LocationMod location;
 
     public int getId() {
         return id;
@@ -44,18 +44,18 @@ public class CharacterDTO {
         this.species = species;
     }
 
-    public LocationDTO getLocation() {
+    public LocationMod getLocation() {
         return location;
     }
 
-    public void setLocation(LocationDTO location) {
+    public void setLocation(LocationMod location) {
         this.location = location;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CharacterDTO character)) return false;
+        if (!(o instanceof CharacterMod character)) return false;
         return getId() == character.getId() && Objects.equals(getName(), character.getName()) && Objects.equals(getStatus(), character.getStatus()) && Objects.equals(getSpecies(), character.getSpecies()) && Objects.equals(getLocation(), character.getLocation());
     }
 

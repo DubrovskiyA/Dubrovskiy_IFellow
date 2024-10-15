@@ -1,15 +1,15 @@
-package ru.ifellow.task1.steps;
+package ru.ifellow.steps;
 
 
 import org.apache.http.HttpStatus;
-import ru.ifellow.task1.api.RickAndMortyApi;
-import ru.ifellow.task1.dto.CharacterDTO;
+import ru.ifellow.model.rickandmorty.CharacterMod;
+import ru.ifellow.api.rickandmorty.RickAndMortyApi;
 
 
 import java.util.*;
 
 
-public class Task1Steps {
+public class RickAndMortySteps {
     private RickAndMortyApi rickAndMortyApi = new RickAndMortyApi();
 
     public Optional<Integer> getCharacterLastEpisodeIdByCharacterName(String name) {
@@ -36,20 +36,20 @@ public class Task1Steps {
                 .max(Integer::compare);
     }
 
-    public CharacterDTO getCharacterById(int id) {
+    public CharacterMod getCharacterById(int id) {
         return rickAndMortyApi.getCharacterById(id)
                 .statusCode(HttpStatus.SC_OK)
                 .extract()
                 .body()
-                .as(CharacterDTO.class);
+                .as(CharacterMod.class);
     }
 
-    public CharacterDTO getCharacterByName(String name) {
+    public CharacterMod getCharacterByName(String name) {
         return rickAndMortyApi.getCharacterByName(name)
                 .statusCode(HttpStatus.SC_OK)
                 .extract()
                 .body()
                 .jsonPath()
-                .getObject("results[0]", CharacterDTO.class);
+                .getObject("results[0]", CharacterMod.class);
     }
 }

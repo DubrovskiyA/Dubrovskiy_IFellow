@@ -1,4 +1,4 @@
-package ru.ifellow.task2.utils;
+package ru.ifellow.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

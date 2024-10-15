@@ -1,15 +1,15 @@
-package ru.ifellow.task2.api;
+package ru.ifellow.api.reqres;
 
 import io.restassured.response.ValidatableResponse;
-import ru.ifellow.task2.dto.UserDTO;
+import ru.ifellow.model.reqres.UserMod;
 
 import static io.restassured.RestAssured.given;
-import static ru.ifellow.task2.utils.Props.props;
+import static ru.ifellow.utils.Props.props;
 
 public class ReqResApi extends BaseApi {
-    private final String CREATE_USER_PATH = props.createUserPath();
+    private final String CREATE_USER_PATH = props.reqResCreateUserPath();
 
-    public ValidatableResponse postUser(UserDTO body) {
+    public ValidatableResponse postUser(UserMod body) {
         return given()
                 .when()
                 .basePath(CREATE_USER_PATH)

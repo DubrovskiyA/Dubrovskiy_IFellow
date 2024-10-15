@@ -1,4 +1,4 @@
-package ru.ifellow.task2.api;
+package ru.ifellow.api.rickandmorty;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;

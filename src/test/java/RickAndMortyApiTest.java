@@ -1,23 +1,21 @@
-package ru.ifellow.task1;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.ifellow.task1.dto.CharacterDTO;
-import ru.ifellow.task1.steps.Task1Steps;
+import ru.ifellow.model.rickandmorty.CharacterMod;
+import ru.ifellow.steps.RickAndMortySteps;
 
 import java.util.Optional;
 
 
-public class Task1Test {
-    private Task1Steps steps = new Task1Steps();
+public class RickAndMortyApiTest {
+    private RickAndMortySteps steps = new RickAndMortySteps();
 
     @Test
-    public void task1Test() {
+    public void mortySmithTest() {
         Optional<Integer> mortySmithLastEpisodeId = steps.getCharacterLastEpisodeIdByCharacterName("Morty Smith");
         Optional<Integer> lastCharacterIdOfMortySmithLastEpisode =
                 steps.getLastCharacterIdOfEpisodeByEpisodeId(mortySmithLastEpisodeId.get());
-        CharacterDTO lastCharacter = steps.getCharacterById(lastCharacterIdOfMortySmithLastEpisode.get());
-        CharacterDTO mortySmith = steps.getCharacterByName("Morty Smith");
+        CharacterMod lastCharacter = steps.getCharacterById(lastCharacterIdOfMortySmithLastEpisode.get());
+        CharacterMod mortySmith = steps.getCharacterByName("Morty Smith");
 
         Assertions.assertEquals(mortySmith.getSpecies(), lastCharacter.getSpecies());
         Assertions.assertNotEquals(mortySmith.getLocation().getName(), lastCharacter.getLocation().getName());

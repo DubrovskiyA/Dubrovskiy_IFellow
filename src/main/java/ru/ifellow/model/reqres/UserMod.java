@@ -1,11 +1,11 @@
-package ru.ifellow.task2.dto;
+package ru.ifellow.model.reqres;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserDTO {
+public class UserMod {
     private String name;
     private String job;
 
@@ -28,7 +28,7 @@ public class UserDTO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof UserDTO that)) return false;
+        if (!(o instanceof UserMod that)) return false;
         return Objects.equals(getName(), that.getName()) && Objects.equals(getJob(), that.getJob());
     }
 

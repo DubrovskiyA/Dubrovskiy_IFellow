@@ -1,8 +1,8 @@
-package ru.ifellow.task1.dto;
+package ru.ifellow.model.rickandmorty;
 
 import java.util.Objects;
 
-public class LocationDTO {
+public class LocationMod {
     private String name;
     private String url;
 
@@ -25,7 +25,7 @@ public class LocationDTO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof LocationDTO location)) return false;
+        if (!(o instanceof LocationMod location)) return false;
         return Objects.equals(getName(), location.getName()) && Objects.equals(getUrl(), location.getUrl());
     }
 
