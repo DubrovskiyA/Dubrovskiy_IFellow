@@ -17,6 +17,4 @@ public class ReqResApi extends BaseApi {
                 .post()
                 .then();
     }
-
-
 }
